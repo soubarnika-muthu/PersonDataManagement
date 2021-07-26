@@ -14,7 +14,7 @@ namespace PersonDataManagement
         {
             personList.Add(new PersonData(1, "sou", "madurai", 15));
             personList.Add(new PersonData(2, "gem", "chennai", 29));
-            personList.Add(new PersonData(6, "venkat", "trichy", 20));
+            personList.Add(new PersonData(6, "venkat", "trichy", 17));
             personList.Add(new PersonData(9, "shanthi", "madurai", 38));
             personList.Add(new PersonData(5, "mani", "chennai", 72));
             personList.Add(new PersonData(4, "muthu", "madurai", 28));
@@ -26,6 +26,13 @@ namespace PersonDataManagement
             //retrive the top two person detail from the list whose age is less tha 10;
             List<PersonData> list = personList.FindAll(person => person.age < 60).OrderBy(x => x.age).Take(2).ToList();
             Console.WriteLine("\nRetriving the top 2 person from list whose age less than 60 ");
+            DisplayList(list);
+        }
+        public void RetrivePersonAgeBetween13And18()
+        {
+            //retrive the top two person detail from the list whose age is between 13 and 18
+            List<PersonData> list = personList.FindAll(person => person.age > 13 && person.age < 18);
+            Console.WriteLine("\nRetriving the top 2 person from list whose age between 13 and 18: ");
             DisplayList(list);
         }
         //method to display the list

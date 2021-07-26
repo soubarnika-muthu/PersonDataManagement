@@ -10,12 +10,15 @@ namespace PersonDataManagement
             Console.WriteLine("Creating Person Data Management System");
             DataManagement management = new DataManagement();
             management.CreateList();
-            Console.WriteLine("1.RetriveTop2PersonAgeLessThan60");
+            Console.WriteLine("1.RetriveTop2PersonAgeLessThan60\n2.RetrivePersonAgeBetween13And18");
             int choice = Convert.ToInt32(Console.ReadLine());
             switch(choice)
             {
                 case 1:
                     management.RetriveTop2PersonAgeLessThan60();
+                    break;
+                case 2:
+                    management.RetrivePersonAgeBetween13And18();
                     break;
                 case 0:
                     break;
