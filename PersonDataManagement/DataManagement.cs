@@ -35,11 +35,18 @@ namespace PersonDataManagement
             Console.WriteLine("\nRetriving the top 2 person from list whose age between 13 and 18: ");
             DisplayList(list);
         }
+        //Method to find average age
         public double AverageAge()
         {
             double averageAge = personList.Average(person => person.age);
             Console.WriteLine("\n Averge age of persons in the list:" + averageAge);
             return averageAge;
+        }
+        //Method to check specified data is present or not 
+        public bool SpecificDataRetrival(string name)
+        {
+            bool value = personList.Contains(personList.FirstOrDefault(x => x.name.Equals(name)));
+            return value;
         }
         //method to display the list
         public void DisplayList(List<PersonData> list)
