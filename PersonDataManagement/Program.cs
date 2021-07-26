@@ -11,6 +11,7 @@ namespace PersonDataManagement
             DataManagement management = new DataManagement();
             management.CreateList();
             Console.WriteLine("1.RetriveTop2PersonAgeLessThan60\n2.RetrivePersonAgeBetween13And18\n3.AverageAgeOfList\n4.SpecificDataRetrival");
+            Console.WriteLine("5.SkipPersonAgeLessThan60");
             int choice = Convert.ToInt32(Console.ReadLine());
             switch(choice)
             {
@@ -35,6 +36,9 @@ namespace PersonDataManagement
                     {
                         Console.WriteLine("Name is not  present in list");
                     }
+                    break;
+                case 5:
+                    management.SkipPersonAgeLessThan60();
                     break;
                 case 0:
                     break;

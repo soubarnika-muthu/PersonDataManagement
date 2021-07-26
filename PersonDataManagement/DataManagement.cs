@@ -48,6 +48,13 @@ namespace PersonDataManagement
             bool value = personList.Contains(personList.FirstOrDefault(x => x.name.Equals(name)));
             return value;
         }
+        public void SkipPersonAgeLessThan60()
+        {
+            //skipping the persons from list whose age less than 60 
+            List<PersonData> list = personList.FindAll(person => person.age >= 60).Take(2).ToList();
+            Console.WriteLine("\nskipping the persons from list whose age less than 60 ");
+            DisplayList(list);
+        }
         //method to display the list
         public void DisplayList(List<PersonData> list)
         {
