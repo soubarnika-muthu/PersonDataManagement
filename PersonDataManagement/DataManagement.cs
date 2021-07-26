@@ -55,6 +55,12 @@ namespace PersonDataManagement
             Console.WriteLine("\nskipping the persons from list whose age less than 60 ");
             DisplayList(list);
         }
+        public void RemoveData(string name)
+        {
+            personList.Remove(personList.FirstOrDefault(x => x.name.Equals(name)));
+            Console.WriteLine("Data after the removal of specific data");
+            DisplayList(personList);
+        }
         //method to display the list
         public void DisplayList(List<PersonData> list)
         {
